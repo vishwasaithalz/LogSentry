@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
 from collections import Counter
 from datetime import datetime, timezone
@@ -64,7 +65,9 @@ def parse_events(path: str | Path) -> list[dict[str, Any]]:
 
     suffix = file_path.suffix.lower()
     if suffix == ".csv":
-        rows = list(csv.DictReader(text.splitlines()))
+        # StringIO preserves quoted newlines inside CSV fields. splitlines()
+        # would incorrectly treat those embedded newlines as record boundaries.
+        rows = list(csv.DictReader(io.StringIO(text, newline="")))
         if not rows:
             raise ValueError("CSV must contain a header row and at least one event.")
         return [_flatten_event(row) for row in rows]
