@@ -20,6 +20,22 @@ class LogSentryTests(unittest.TestCase):
             self.assertEqual(events[0]["event_id"], "4625")
             self.assertEqual(events[0]["level"], "Warning")
 
+    def test_parse_csv_with_quoted_multiline_message(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "events.csv"
+            path.write_text(
+                'EventID,Provider,Level,Message\n'
+                '4625,Security,Warning,"Failed logon\n'
+                'Additional diagnostic detail"\n',
+                encoding="utf-8",
+            )
+            events = parse_events(path)
+            self.assertEqual(len(events), 1)
+            self.assertEqual(
+                events[0]["message"],
+                "Failed logon\nAdditional diagnostic detail",
+            )
+
     def test_parse_wrapped_json(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "events.json"
