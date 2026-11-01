@@ -1,47 +1,91 @@
-# LogSentry
+<p align="center"><img src="assets/logsentry-hero.svg" alt="LogSentry custom project artwork" width="100%" /></p>
 
-A local-first Windows security event log analyzer for importing, filtering, and summarizing event data without sending it anywhere.
+<p align="center">
+  <a href="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml"><img src="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml/badge.svg" alt="LogSentry tests" /></a>
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+" />
+  <img src="https://img.shields.io/badge/Dependencies-stdlib%20only-1f2937?style=flat-square" alt="Standard library only" />
+  <img src="https://img.shields.io/badge/Mode-Local--first-0f766e?style=flat-square" alt="Local first" />
+</p>
 
-## Initial version
+<p align="center"><strong>Turn exported Windows event data into a clearer investigation starting point.</strong></p>
 
-- Imports exported Windows Event Log data as JSON or CSV.
-- Normalizes common fields such as event ID, timestamp, provider, level, and message.
-- Filters events by event ID, level, provider, and time window.
-- Produces a concise investigation summary.
-- Includes synthetic sample data and offline tests.
-- Uses only the Python standard library.
+<p align="center">[Overview](#-overview) · [Quick start](#-quick-start) · [Examples](#-example-workflow) · [Safety](#-privacy--safety) · [Roadmap](#-roadmap)</p>
 
-## Privacy and safety
+## 🔍 Overview
 
-LogSentry does not connect to Windows Event Log automatically, does not elevate privileges, and does not transmit imported data. The first version works only with files explicitly selected by the user. Use synthetic data for demonstrations and remove personal or organisational information before sharing reports.
+LogSentry is a small, local-first Python utility for importing, filtering, and summarising Windows Event Log data that you explicitly export. It is designed as a learning and triage helper, not an endpoint detection product.
 
-## Requirements
+### What it does
 
-- Python 3.10+
-- No third-party runtime dependencies
+- Imports exported event data in JSON or CSV.
+- Normalises common event fields such as event ID, timestamp, provider, level, and message.
+- Filters by event ID, level, provider, and time window.
+- Produces readable text or machine-readable JSON summaries.
+- Includes synthetic sample data and offline unit tests.
 
-## Quick start
+## ⚡ Quick start
 
-    py -3 -m logsentry samples/security-events.json
+**Requirements:** Python 3.10 or newer. No third-party runtime packages.
 
-JSON report:
+```powershell
+git clone https://github.com/vishwasaithalz/LogSentry.git
+cd LogSentry
+py -3 -m logsentry samples/security-events.json
+```
 
-    py -3 -m logsentry samples/security-events.json --format json
+JSON output:
+
+```powershell
+py -3 -m logsentry samples/security-events.json --format json
+```
 
 CSV input:
 
-    py -3 -m logsentry samples/security-events.csv --format text
+```powershell
+py -3 -m logsentry path\to\export.csv --format text
+```
 
-## Export Windows events yourself
+Run tests:
 
-On a Windows machine, export only the event data you are authorised to review using Event Viewer or an approved administrative process. Save the export locally, then pass the resulting JSON or CSV file to LogSentry. Export formats vary; use the included sample schema as a guide.
+```powershell
+py -3 -m unittest discover -s tests -v
+```
 
-## Test
+## 🧭 Example workflow
 
-    py -3 -m unittest discover -s tests -v
+1. Export only the Windows events you are authorised to review using Event Viewer or an approved administrative process.
+2. Save the export locally as JSON or CSV.
+3. Run LogSentry against that file.
+4. Review the summary in context. Event IDs and severity labels are clues, not verdicts.
 
-## Current scope
+## 🛡️ Privacy & safety
 
-This is an initial offline parser and triage helper, not an endpoint detection product, forensic suite, or automated incident-response tool. Event IDs and severity labels need interpretation in their environment and should not be treated as proof of compromise.
+- No automatic subscription to Windows Event Log.
+- No privilege elevation, network requests, telemetry, or data upload.
+- Use synthetic data for demonstrations.
+- Remove personal, customer, host, and organisational details before sharing reports.
 
-See SECURITY.md and CONTRIBUTING.md.
+This initial version is an offline parser. It is not a forensic suite, EDR, automated incident response system, or proof of compromise.
+
+## 🧱 Project structure
+
+```text
+logsentry/       Parser, normalisation, filters and CLI
+samples/         Synthetic event data
+tests/           Offline unit tests
+.github/         CI workflow
+```
+
+## 🗺️ Roadmap
+
+- [ ] Add more real-world export-format fixtures using sanitised synthetic data.
+- [ ] Improve field mapping and parser diagnostics.
+- [ ] Add investigation report export options.
+- [ ] Document an optional Windows export helper without collecting data automatically.
+- [ ] Add a small read-only dashboard only after the CLI behaviour is stable.
+
+## 🤝 Contributing
+
+Focused bug reports and reproducible test cases are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md) first.
+
+<p align="center"><sub>Built for careful investigation. Local data stays local.</sub></p>
