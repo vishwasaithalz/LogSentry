@@ -9,7 +9,7 @@
 
 <p align="center"><strong>Turn exported Windows event data into a clearer investigation starting point.</strong></p>
 
-<p align="center">[Overview](#-overview) · [Quick start](#-quick-start) · [Examples](#-example-workflow) · [Safety](#-privacy--safety) · [Roadmap](#-roadmap)</p>
+<p align="center"><a href="#-overview">Overview</a> · <a href="#-quick-start">Quick start</a> · <a href="#-example-workflow">Examples</a> · <a href="#-privacy--safety">Safety</a> · <a href="#-roadmap">Roadmap</a></p>
 
 ## 🔍 Overview
 
