@@ -32,7 +32,7 @@ def investigate(events, failure_threshold=5, window_minutes=15):
     for idx,(time,event) in enumerate(timeline):
         if _event_id(event)!=AUTH_FAILURE:
             continue
-        window=[e for t,e in timeline if time<=t<=time.replace() and (t-time).total_seconds()<=window_minutes*60 and _event_id(e)==AUTH_FAILURE]
+        window=[e for t,e in timeline if time<=t and (t-time).total_seconds()<=window_minutes*60 and _event_id(e)==AUTH_FAILURE]
         if len(window)>=failure_threshold and (not findings or findings[-1].get("first_seen")!=time.isoformat()):
             findings.append({"type":"authentication_failure_burst","first_seen":time.isoformat(),"events_in_window":len(window),"severity":"review","note":"Correlate with authorised host and account context; not proof of compromise."})
             break
