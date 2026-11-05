@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from .analyzer import filter_events, parse_events, summarize
+from .investigation import investigate
 
 
 def main() -> int:
@@ -18,6 +19,7 @@ def main() -> int:
     parser.add_argument("--level", help="Filter by level, e.g. Warning or Error")
     parser.add_argument("--provider", help="Case-insensitive provider substring")
     parser.add_argument("--since", help="ISO-8601 timestamp lower bound")
+    parser.add_argument("--investigate", action="store_true", help="Add authentication failure and lockout triage")
     parser.add_argument("--format", choices=("text", "json"), default="text")
     parser.add_argument("--output", help="Write the report to this path instead of stdout")
     args = parser.parse_args()
@@ -26,6 +28,8 @@ def main() -> int:
         events = parse_events(args.file)
         events = filter_events(events, args.event_id, args.level, args.provider, args.since)
         report = summarize(events)
+        if args.investigate:
+            report['investigation'] = investigate(events)
     except (ValueError, OSError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
@@ -43,6 +47,12 @@ def main() -> int:
         lines.extend(f"  {item['event_id']}: {item['count']}" for item in report["top_event_ids"])
         lines.append("Top providers:")
         lines.extend(f"  {item['provider']}: {item['count']}" for item in report["top_providers"])
+        if args.investigate:
+            lines.append("Investigation findings:")
+            for finding in report["investigation"]["findings"]:
+                lines.append("  {}: review context".format(finding["type"]))
+            if not report["investigation"]["findings"]:
+                lines.append("  No configured patterns detected; absence is not proof of safety.")
         lines.extend(["", "Triage aid only. Validate findings in the original system context."])
         output = "\n".join(lines) + "\n"
 
