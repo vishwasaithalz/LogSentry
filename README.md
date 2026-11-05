@@ -89,3 +89,16 @@ tests/           Offline unit tests
 Focused bug reports and reproducible test cases are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md) first.
 
 <p align="center"><sub>Built for careful investigation. Local data stays local.</sub></p>
+
+
+<!-- KARMA VISUAL IDENTITY: START -->
+<div align="center">
+
+**DEFENSIVE SECURITY / LOG ANALYSIS**
+
+<img src="https://img.shields.io/badge/KARMA-SYSTEMS-0f172a?style=for-the-badge" alt="KARMA Systems" /> <img src="https://img.shields.io/badge/BUILD-VERIFY-0f766e?style=for-the-badge" alt="Build and verify" />
+
+<sub>Designed for clarity. Built for evidence. No invented status metrics.</sub>
+
+</div>
+<!-- KARMA VISUAL IDENTITY: END -->
