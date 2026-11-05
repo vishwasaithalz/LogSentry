@@ -20,16 +20,20 @@ def main() -> int:
     parser.add_argument("--provider", help="Case-insensitive provider substring")
     parser.add_argument("--since", help="ISO-8601 timestamp lower bound")
     parser.add_argument("--investigate", action="store_true", help="Add authentication failure and lockout triage")
+    parser.add_argument("--failure-threshold", type=int, default=5, help="Failures required to flag a burst (default: 5)")
+    parser.add_argument("--window-minutes", type=int, default=15, help="Failure-burst window in minutes (default: 15)")
     parser.add_argument("--format", choices=("text", "json"), default="text")
     parser.add_argument("--output", help="Write the report to this path instead of stdout")
     args = parser.parse_args()
 
     try:
+        if args.failure_threshold < 1 or args.window_minutes < 1:
+            raise ValueError('Failure threshold and window minutes must be positive integers')
         events = parse_events(args.file)
         events = filter_events(events, args.event_id, args.level, args.provider, args.since)
         report = summarize(events)
         if args.investigate:
-            report['investigation'] = investigate(events)
+            report['investigation'] = investigate(events, failure_threshold=args.failure_threshold, window_minutes=args.window_minutes)
     except (ValueError, OSError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
