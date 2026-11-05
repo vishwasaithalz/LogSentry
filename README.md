@@ -36,7 +36,7 @@ py -3 -m logsentry samples/security-events.json
 JSON output:
 
 ```powershell
-py -3 -m logsentry samples/security-events.json --format json
+py -3 -m logsentry samples/security-events.json --format json\n\nSave a report directly to a file:\n\n```powershell\npy -3 -m logsentry samples/security-events.json --format json --output reports\\triage.json\n```
 ```
 
 CSV input:
