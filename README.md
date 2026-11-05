@@ -51,6 +51,17 @@ Run tests:
 py -3 -m unittest discover -s tests -v
 ```
 
+## 🕵️ Investigation mode
+
+Use a real offline investigation workflow with an exported, authorized event file:
+
+```powershell
+py -3 -m logsentry samples/security-events.json --investigate --format text
+py -3 -m logsentry samples/security-events.json --investigate --format json --output reports\\investigation.json
+```
+
+This highlights Event ID 4625 authentication-failure bursts (five events within fifteen minutes by default) and Event ID 4740 account lockouts. It is a starting point, not an automated verdict. Review source timestamps, accounts and machine context locally. No upload, live collection or privileged access is performed.
+
 ## 🧭 Example workflow
 
 1. Export only the Windows events you are authorised to review using Event Viewer or an approved administrative process.
