@@ -1,3 +1,7 @@
+<!-- KARMA PROJECT IDENTITY / original art -->
+<p align="center"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/projects/logsentry-v2.svg" alt="🛡️ LogSentry: Defensive Windows event triage" width="100%" /></p>
+<p align="center"><strong>🛡️ LogSentry</strong> · Defensive Windows event triage</p>
+
 <p align="center"><img src="assets/logsentry-hero.svg" alt="LogSentry custom project artwork" width="100%" /></p>
 
 <p align="center">
