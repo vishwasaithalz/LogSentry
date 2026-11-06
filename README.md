@@ -1,8 +1,14 @@
-<!-- KARMA PROJECT IDENTITY / original art -->
-<p align="center"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/projects/logsentry-v2.svg" alt="🛡️ LogSentry: Defensive Windows event triage" width="100%" /></p>
+<!-- KARMA PROJECT IDENTITY / compact visual navigation -->
+<p align="center"><a href="https://github.com/vishwasaithalz/LogSentry"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/logsentry.svg" width="68%" alt="Open 🛡️ LogSentry project" /></a></p>
 <p align="center"><strong>🛡️ LogSentry</strong> · Defensive Windows event triage</p>
+<p align="center">
+<a href="https://github.com/vishwasaithalz/LogSentry/pull/2"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/logsentry.svg" width="46%" alt="View verified LogSentry investigation documentation" /></a>
+<a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/#terminal"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/terminal.svg" width="46%" alt="Try the browser project explorer" /></a>
+</p>
 
-<p align="center"><img src="assets/logsentry-hero.svg" alt="LogSentry custom project artwork" width="100%" /></p>
+<details><summary>🎨 Open original full-size project artwork</summary>
+<p align="center"><img src="assets/logsentry-hero.svg" alt="LogSentry custom project artwork" width="90%" /></p>
+</details>
 
 <p align="center">
   <a href="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml"><img src="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml/badge.svg" alt="LogSentry tests" /></a>
