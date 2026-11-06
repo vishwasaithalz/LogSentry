@@ -66,7 +66,9 @@ py -3 -m logsentry samples/security-events.json --investigate --format text
 py -3 -m logsentry samples/security-events.json --investigate --format json --output reports\\investigation.json
 ```
 
-This highlights Event ID 4625 authentication-failure bursts (five events within fifteen minutes by default) and Event ID 4740 account lockouts. It is a starting point, not an automated verdict. Review source timestamps, accounts and machine context locally. No upload, live collection or privileged access is performed.
+This highlights Event ID 4625 authentication-failure bursts (five events within fifteen minutes by default) and Event ID 4740 account lockouts. It is a starting point, not an automated verdict.
+
+**Interpretation limits:** A burst of failed logons can result from mistyped passwords, stale service credentials, or automated activity; it is not proof of compromise. A lockout event likewise requires corroborating context. Validate the event timestamps, account names, affected hosts, and relevant authentication history before drawing conclusions. Use synthetic data for public demonstrations and avoid publishing sensitive exported event records. Review source timestamps, accounts and machine context locally. No upload, live collection or privileged access is performed.
 
 ## 🧭 Example workflow
 
