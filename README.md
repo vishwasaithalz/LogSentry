@@ -9,8 +9,7 @@
 
 <p align="center"><a href="https://github.com/vishwasaithalz/LogSentry"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/logsentry.svg" width="68%" alt="Open 🛡️ LogSentry project" /></a></p>
 <p align="center"><strong>🛡️ LogSentry</strong> · Defensive Windows event triage</p>
-<details>
-<summary>Build and technology badges</summary>
+
 
 <p align="center">
 <a href="https://github.com/vishwasaithalz/LogSentry/pull/2"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/logsentry.svg" width="46%" alt="View verified LogSentry investigation documentation" /></a>
@@ -22,6 +21,9 @@
 </details>
 
 </details>
+
+<details>
+<summary>Build and technology badges</summary>
 
 <p align="center">
   <a href="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml"><img src="https://github.com/vishwasaithalz/LogSentry/actions/workflows/tests.yml/badge.svg" alt="LogSentry tests" /></a>
