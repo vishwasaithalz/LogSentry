@@ -1,20 +1,17 @@
 <!-- VISHWAS.EXE UNIFIED THEME START -->
-<p align="center"><a href="https://github.com/vishwasaithalz/LogSentry"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/brand/vishwas-exe-logsentry.svg" width="100%" alt="VISHWAS.EXE uniform retro GitHub interface for LogSentry, created by Vishwas Aithal" /></a></p>
-<p align="center"><strong>VISHWAS.EXE / LogSentry</strong><br/>Local-first defensive Windows event learning<br/><sub>Designed and built by <strong>Vishwas Aithal</strong> · Same computer universe, its own personality</sub></p>
-<p align="center">
-  <a href="https://vishwasaithalz.github.io/vishwasaithalz/"><strong>💾 BOOT MANAGER</strong></a> &nbsp;·&nbsp;
-  <a href="https://vishwasaithalz.github.io/vishwasaithalz/overload/"><strong>🖥️ OVERLOAD OS</strong></a> &nbsp;·&nbsp;
-  <a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/"><strong>🎮 ARCADE</strong></a> &nbsp;·&nbsp;
-  <a href="https://github.com/vishwasaithalz?tab=repositories"><strong>📁 ALL PROJECTS</strong></a> &nbsp;·&nbsp;
-  <a href="https://vishwasaithal.ai.studio/"><strong>🌐 PORTFOLIO</strong></a>
-</p>
+<p align="center"><a href="https://github.com/vishwasaithalz/LogSentry"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/brand/vishwas-exe-logsentry.svg" width="100%" alt="LogSentry. Original editorial illustration by Vishwas Aithal." /></a></p>
+
+<p align="center"><a href="https://vishwasaithalz.github.io/vishwasaithalz/">Personal index</a> &nbsp;·&nbsp; <a href="https://github.com/vishwasaithalz?tab=repositories">All projects</a> &nbsp;·&nbsp; <a href="https://vishwasaithal.ai.studio/">Portfolio</a></p>
 <!-- VISHWAS.EXE UNIFIED THEME END -->
 
 <details>
-<summary><strong>🎞 Open legacy project visuals and original navigation</strong></summary>
+<summary>Earlier artwork and navigation</summary>
 
 <p align="center"><a href="https://github.com/vishwasaithalz/LogSentry"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/tiles/logsentry.svg" width="68%" alt="Open 🛡️ LogSentry project" /></a></p>
 <p align="center"><strong>🛡️ LogSentry</strong> · Defensive Windows event triage</p>
+<details>
+<summary>Build and technology badges</summary>
+
 <p align="center">
 <a href="https://github.com/vishwasaithalz/LogSentry/pull/2"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/logsentry.svg" width="46%" alt="View verified LogSentry investigation documentation" /></a>
 <a href="https://vishwasaithalz.github.io/vishwasaithalz/arcade/#terminal"><img src="https://raw.githubusercontent.com/vishwasaithalz/vishwasaithalz/main/assets/nav/terminal.svg" width="46%" alt="Try the browser project explorer" /></a>
@@ -32,6 +29,7 @@
   <img src="https://img.shields.io/badge/Dependencies-stdlib%20only-1f2937?style=flat-square" alt="Standard library only" />
   <img src="https://img.shields.io/badge/Mode-Local--first-0f766e?style=flat-square" alt="Local first" />
 </p>
+</details>
 
 <p align="center"><strong>Turn exported Windows event data into a clearer investigation starting point.</strong></p>
 
