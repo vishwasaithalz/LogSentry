@@ -98,10 +98,12 @@ This highlights Event ID 4625 authentication-failure bursts (five events within 
 
 ## 🧭 Example workflow
 
-1. Export only the Windows events you are authorised to review using Event Viewer or an approved administrative process.
+1. Export only the Windows events you are authorised to review using Event Viewer or an approved administrative process. LogSentry accepts JSON or CSV, not native `.evtx` files. Convert an authorised export to one of the supported formats locally before running the tool; do not rename an `.evtx` file to `.json` or `.csv`.
 2. Save the export locally as JSON or CSV.
 3. Run LogSentry against that file.
 4. Review the summary in context. Event IDs and severity labels are clues, not verdicts.
+
+**Before sharing a report:** use synthetic fixtures for public examples. For real investigations, keep raw exports private and remove account names, computer names, IP addresses, message contents, and other identifying fields from any excerpts you are authorised to disclose.
 
 ## 🛡️ Privacy & safety
 
